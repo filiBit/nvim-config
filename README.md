@@ -66,7 +66,7 @@ _To use a different plugin manager, these configuration files will need to be up
 
 -   `<leader>` is set to space (`" "`)
 -   Default keybindings by LSP Zero plugin: [here](https://github.com/VonHeikemen/lsp-zero.nvim?tab=readme-ov-file#keybindings)
--   Code completion:
+-   Code completion ("insert" mode only):
 
     | Keybinding  | Action                                                                  |
     | :---------- | :---------------------------------------------------------------------- |
