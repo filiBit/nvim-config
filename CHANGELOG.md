@@ -11,7 +11,7 @@
 ### Fixed
 
 -   Keybinding `<leader>=` now correctly formats the buffer
--   False diagnostiscs are eliminiated from Lua in Neovim's environment
+-   False diagnostiscs are no longer shown in Lua within Neovim's environment
 
 ## [1.0.0] 2024-01-08
 
