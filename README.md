@@ -1,10 +1,23 @@
 # Filibit's Neovim configuration
 
+## Features
+
+| Feature                  | Description                                                        |
+| :----------------------- | :----------------------------------------------------------------- |
+| Language support         | Lua, Javascript, Typescript, JSX, TSX, C, Zig, JSON, CSS/SCSS/LESS |
+| Code diagnostics         | :white_check_mark:                                                 |
+| Code actions             | :white_check_mark:                                                 |
+| Code formatting          | :white_check_mark:                                                 |
+| Common sense keybindings | Mostly defaults from various plugins                               |
+| Color scheme             | [Rose pine](https://github.com/rose-pine/neovim)                   |
+
+## Directory structure
+
 | File                   | Description                                                                   |
 | :--------------------- | :---------------------------------------------------------------------------- |
 | `init.lua`             | A "barrel" file that loads all the sub modules                                |
-| `plugins.lua`          | Manages plugins                                                               |
-| `static-analysis.lua`  | Manages language servers, code completions, syntax highlighting               |
+| `plugins.lua`          | Manages plugins with [Vim-plug](https://github.com/junegunn/vim-plug)         |
+| `static-analysis.lua`  | Manages language servers, code actions, syntax highlighting                   |
 | `formatting.lua`       | Manages code formatting                                                       |
 | `telescope-config.lua` | Manages the configuration of `telescope` and `telescope-file-browser` plugins |
 | `color-scheme`         | Manages the color scheme                                                      |
@@ -89,6 +102,7 @@ _To use a different plugin manager, these configuration files will need to be up
 -   Useful plugin commands:
     -   `:PlugStatus`
     -   `:Mason`
+    -   `:NullLsInfo`
 
 ## Understanding Neovim's configuration
 
