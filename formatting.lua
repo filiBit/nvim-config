@@ -2,7 +2,7 @@ local nullLs = require("null-ls")
 local masonNullLs = require("mason-null-ls")
 
 masonNullLs.setup({
-	ensure_installed = { "stylua", "prettier" },
+	ensure_installed = { "stylua", "prettier", "clang_format" },
 	automatic_installation = true,
 })
 
@@ -10,7 +10,11 @@ local nullLsFormatting = nullLs.builtins.formatting
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 nullLs.setup({
-	sources = { nullLsFormatting.stylua, nullLsFormatting.prettier },
+	sources = {
+		nullLsFormatting.stylua,
+		nullLsFormatting.prettier,
+		nullLsFormatting.clang_format,
+	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -25,4 +29,6 @@ nullLs.setup({
 	end,
 })
 
-vim.keymap.set("n", "<leader>=", ":FormatWrite<CR>")
+vim.keymap.set("n", "<leader>=", function()
+	return vim.lsp.buf.format({ async = false })
+end)
